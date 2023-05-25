@@ -1,0 +1,291 @@
+@font-face {
+  font-family: gill_bold;
+  src: url(../fonts/gillSans_bold.TTF);
+}
+
+@font-face {
+  font-family: gill_italic;
+  src: url(../fonts/gillSans_italic.TTF);
+}
+body {
+  margin: 0;
+  width: auto;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+p {
+  font-size: 1.3em;
+  font-family: gill_italic;
+  line-height: 1.2em;
+}
+label {
+  font-size: 1.2em;
+}
+h1 {
+  font-family: gill_bold;
+  font-size: 3.2rem;
+}
+h2 {
+  font-family: gill_bold;
+  /* font-size: 1.3em; */
+}
+
+input.larger {
+  width: 30px;
+  height: 30px;
+}
+
+.margin {
+  margin: 1em;
+}
+.errors {
+  color: rgb(15, 4, 4);
+  background-color: red;
+}
+
+div {
+  background-color: #fffbd8;
+  color: #1e2245;
+}
+
+body,
+button {
+  background-color: #7e3c86;
+  color: #fffbd8;
+  font-family: gill_bold;
+  /* margin-left: 1em;
+  margin-right: 1em;
+  width: 90%; */
+}
+.flex {
+  display: flex;
+}
+
+img {
+  display: inline-block;
+  max-width: 50%;
+  height: auto;
+}
+
+.grid_container__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "headline headline "
+    "pirat piratin "
+    "intro__text intro__text ";
+}
+
+.pirat {
+  grid-area: pirat;
+  display: flex;
+  justify-self: end;
+  /* margin-left: 1em; */
+  /* align-self: end; */
+}
+.piratin {
+  grid-area: piratin;
+}
+.headline {
+  grid-area: headline;
+  text-align: center;
+}
+
+.intro__text {
+  grid-area: intro__text;
+  place-self: center;
+}
+
+/* ////////////////! */
+
+.grid_container__form {
+  display: grid;
+  max-width: fit-content;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 0.47fr 1fr;
+  grid-template-rows: 0.25fr 0.75fr 0.75fr 0.75fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+
+  grid-template-areas:
+    "subheadline_2 subheadline_2"
+    "filme filme"
+    "filme filme"
+    "filme filme"
+    "subheadline_3 subheadline_3"
+    "lieblingsfilm__input lieblingsfilm__input"
+    "text text"
+    "name__label name__input"
+    "email__label email__input"
+    "datenweiter__text datenweiter__text"
+    "datenschutz__input_label datenschutz__input_label"
+    "abschicken__button abschicken__button"
+    "filmkorte__link filmkorte__link"
+    "logos logos"
+    "logos logos"
+    "logos logos";
+}
+.datenweiter__text {
+  grid-area: datenweiter__text;
+  place-self: center;
+}
+.datenschutz__input_label {
+  grid-area: datenschutz__input_label;
+
+  justify-self: start;
+  place-self: center;
+  display: ruby text;
+}
+.smallerFontLabel {
+  font-size: 0.9em;
+}
+.text {
+  grid-area: text;
+}
+.name__label {
+  grid-area: name__label;
+}
+
+.name__input {
+  grid-area: name__input;
+}
+
+.email__label {
+  grid-area: email__label;
+
+  justify-self: end;
+}
+
+.email__input {
+  grid-area: email__input;
+}
+#txtbox__smaller {
+  font-size: 18pt;
+  height: 42px;
+  width: 40vw;
+}
+.subheadline_2 {
+  justify-self: center;
+  grid-area: subheadline_2;
+  /* margin: 0 0.1em 0 0.8em; */
+  /* width: 60%; */
+  font-size: 3vw;
+}
+
+.filme {
+  grid-area: filme;
+  display: grid;
+  grid-auto-columns: 1fr;
+  /* grid-auto-rows: 1fr; */
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label"
+    "subgrid__input subgrid__label";
+  /* width: max-content; */
+}
+
+.subgrid__label {
+  /* grid-area: subgrid__label; */
+  align-self: center;
+}
+.subgrid__input {
+  /* grid-area: subgrid__input; */
+  margin-right: 1em;
+  place-self: center;
+  justify-self: end;
+}
+.subheadline_3 {
+  grid-area: subheadline_3;
+  place-self: center;
+  font-size: 3vw;
+}
+
+.lieblingsfilm__input {
+  grid-area: lieblingsfilm__input;
+  place-self: center;
+  max-width: 90%;
+}
+#txtbox {
+  font-size: 18pt;
+  height: 42px;
+  width: 300px;
+}
+.abschicken__button {
+  grid-area: abschicken__button;
+  place-self: center;
+}
+.button {
+  margin: 0.8em 1.5em 0.5em 0.5em;
+  padding: 1.5em;
+  border-radius: 15px 50px;
+}
+.filmkorte__link {
+  grid-area: filmkorte__link;
+  position: relative;
+  left: 1.3em;
+  background-color: transparent;
+  place-self: center;
+}
+.filmkorteFB__icon_1 {
+  place-self: center;
+  position: relative;
+  left: 2.2em;
+  max-width: 20%;
+  background-color: transparent;
+  place-self: start;
+}
+
+.filmkorteInsta_icon_2 {
+  place-self: center;
+  position: relative;
+  top: 1.3em;
+  max-width: 24%;
+  place-self: end;
+}
+
+.logos > div,
+.textLogos {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  place-items: center;
+  align-items: center;
+  /* justify-self: center; */
+}
+
+.logos {
+  grid-area: logos;
+}
+
+.filmkorteLogo {
+  margin-top: 0.5em;
+}
+.hsLogo {
+  margin: 0.5em;
+}
+.gurkenLogo {
+  margin: 0.5em;
+}
+.shInnenLogo {
+  margin: 0.5em;
+}
+
+@media screen and (min-width: 500px) {
+  p {
+    /* font-size: 2em; */
+  }
+}
