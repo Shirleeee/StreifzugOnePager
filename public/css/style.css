@@ -16,19 +16,19 @@ body {
 }
 p {
   font-size: 1.3em;
-  font-family: gill_italic;
+  font-family: gill_italic, Verdana, Arial, Helvetica, sans-serif;
   line-height: 1.2em;
 }
 label {
   font-size: 1.2em;
 }
 h1 {
-  font-family: gill_bold;
+  font-family: gill_bold,Verdana, Arial, Helvetica, sans-serif;
   font-size: 3.2rem;
-  margin: .1em;
+  margin: 0.1em;
 }
 h2 {
-  font-family: gill_bold;
+  font-family: gill_bold,Verdana, Arial, Helvetica, sans-serif;;
   font-size: 2em;
 }
 
@@ -72,7 +72,7 @@ img {
 .grid_container__intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 0.25fr ;
+  grid-template-rows: 1fr 0.25fr;
   grid-template-areas:
     "headline headline "
     "pirat piratin "
@@ -319,7 +319,7 @@ img {
     margin-left: 1em;
     align-self: end;
   }
-  .intro__text{
+  .intro__text {
     text-align: center;
   }
   .pirat {
@@ -342,7 +342,6 @@ img {
       "abschicken__button  abschicken__button  abschicken__button";
   }
   #txtbox__smaller {
-    
     width: 54vw;
   }
   .subheadline_2,
@@ -416,7 +415,7 @@ img {
   .filmkorteInsta_icon_2 {
     left: 4em;
     max-width: 22%;
-    top: .09em;
+    top: 0.09em;
   }
 
   .filmkorteLogo,
