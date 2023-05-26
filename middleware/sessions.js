@@ -6,7 +6,7 @@ const debug = Debug("app:Sessions");
 const MAX_AGE = 60 * 30 * 1000; //1.800.000 ms - half hour
 
 //3.600.000 ms - one hour
-// 360.000 6 minuten
+// 360.000 6 minutes
 
 //900 000 ms - 15 minutes
 

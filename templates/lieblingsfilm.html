@@ -2,10 +2,10 @@
 
 <div class="grid_container__intro">
   <!-- <div class="pirat"> -->
-  <img class="pirat" src="/img/pirat.png" alt="einPirat" />
+  <img class="pirat" src="/img/pirat.png" alt="ein Pirat" />
   <!-- </div> -->
   <!-- <div class="piratin"> -->
-  <img class="piratin" src="/img/piratin.png" alt="einePiratin" />
+  <img class="piratin" src="/img/piratin.png" alt="eine Piratin" />
   <!-- </div> -->
   <div class="headline">
     <h1 class=" ">Kinder Streifzug 2023</h1>
@@ -18,12 +18,12 @@
       Beute gemacht!?
     </p>
     <p>Nun wüssten wir gern:</p>
-    {% if errors.name or errors.filme or errors.lieblingsfilm or errors.email %}
-    <p class="errors">{{ errors.lieblingsfilm }}</p>
-    <p class="errors">{{ errors.filme }}</p>
-    <!-- <p class="errors">{{ errors.email }}</p> -->
-
+    {% if errors.name %}
     <p class="errors">{{ errors.name }}</p>
+    {% endif %} {% if errors.filme %}
+    <p class="errors">{{ errors.filme }}</p>
+    {% endif %} {% if errors.lieblingsfilm %}
+    <p class="errors">{{ errors.lieblingsfilm }}</p>
     {% endif %}
   </div>
 </div>
@@ -390,9 +390,19 @@
           checked
         />
         {% set m = true %} {% endif %} {% endfor %} {% if not errors %}
-        <input type="checkbox" class="larger" name="filme" value="Stromsparen" />
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Stromsparen"
+        />
         {% endif %} {% if m == false and errors%}
-        <input type="checkbox" class="larger" name="filme" value="Stromsparen" />
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Stromsparen"
+        />
         {% endif %}
       </div>
       <div class="subgrid__label">
@@ -458,7 +468,7 @@
         irgendwas)
       </p>
     </div>
-    <div class="datenschutz__input_label">
+    <div class="datenschutz__input">
       <input
         class="larger"
         type="checkbox"
@@ -466,7 +476,8 @@
         value="akzeptiert"
         required
       />
-
+    </div>
+    <div class="datenschutz__label">
       <label class="smallerFontLabel"
         ><a href="https://filmkorte.de/rechtliches/datenschutz"
           >Einwilligung zur Datenschutzerklärung</a
@@ -477,67 +488,73 @@
     <div class="abschicken__button">
       <button class="button" type="submit">Abschicken!</button>
     </div>
-
-    <div class="filmkorte__link margin flex">
-      <div class="website__text">
-        <p class="smallerFontLabel">
-          <br />Alles über&nbsp;
-          <a target="_blank" href="https://filmkorte.de/"> filmkorte</a>
-          &nbsp;auf unserer Website.
-        </p>
-      </div>
-      <div class="filmkorteFB__icon_1">
-        <p class="smallerFontLabel">Folgt uns auf:</p>
-        <a
-          target="_blank"
-          href="https://www.facebook.com/Filmkorte-eV-100829078801775/"
-        >
-          <img
-            class="icons"
-            src="svg/facebook-color-svgrepo-com.svg"
-            alt="Facebook"
-        /></a>
-      </div>
-      <div class="filmkorteInsta_icon_2 margin flex">
-        <a target="_blank" href="https://www.instagram.com/filmkorte"
-          ><img
-            class="icons"
-            src="svg/instagram-1-svgrepo-com.svg"
-            alt="Instagram"
-        /></a>
-      </div>
-    </div>
-
-    <div class="logos">
-      <hr />
-      <p class="textLogos">gefördert durch:</p>
-      <div class="filmkorteDiv">
-        <img class="filmkorteLogo" src="/logos/logo-filmkorte.jpg" alt="" />
-      </div>
-      <div>
-        <img
-          class="gurkenLogo"
-          src="/logos/Innenstadt_Logo_Motiv_Gurke_NEG.png"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          class="shInnenLogo"
-          src="/logos/sh_innen_logo_4c_gross_MIKWS.jpg"
-          alt=""
-        />
-      </div>
-
-      <div>
-        <img
-          class="hsLogo"
-          src="/logos/logo_hs_flensburg-e1578992720701.png"
-          alt=""
-        />
-      </div>
-    </div>
   </div>
 </form>
+<hr />
+<div class="grid_container__links">
+  <div class="filmkorte__link margin flex">
+    <div class="website__text">
+      <p class="smallerFontLabel">
+        <br />Alles über&nbsp;
+        <a target="_blank" href="https://filmkorte.de/"> filmkorte</a>
+        &nbsp;auf unserer Website.
+      </p>
+    </div>
+  </div>
+  <div class="filmkorteSocial__icons">
+    <p class="smallerFontLabel">Folgt uns auf:</p>
+    <a
+      target="_blank"
+      href="https://www.facebook.com/Filmkorte-eV-100829078801775/"
+    >
+      <img
+        class="filmkorteFB__icon_1"
+        src="svg/facebook-color-svgrepo-com.svg"
+        alt="Facebook"
+    /></a>
 
+    <a target="_blank" href="https://www.instagram.com/filmkorte"
+      ><img
+        class="filmkorteInsta_icon_2"
+        src="svg/instagram-1-svgrepo-com.svg"
+        alt="Instagram"
+    /></a>
+  </div>
+
+  <div class="logoArea">
+    <p class="textLogos smallerFontLabel">gefördert durch:</p>
+    <div class="logo margin">
+      <img class="filmkorteLogo" src="/logos/logo-filmkorte.jpg" alt="" />
+    </div>
+    <div>
+      <img
+        class="logo margin"
+        src="/logos/Innenstadt_Logo_Motiv_Gurke_NEG.png"
+        alt="Deine Idee Deine Innenstadt Logo"
+      />
+    </div>
+    <div>
+      <img
+        class="logo margin"
+        src="/logos/sh_innen_logo_4c_gross_MIKWS.jpg"
+        alt="Schleswig Holstein Innenministerium Logo"
+      />
+    </div>
+
+    <div>
+      <img
+        class="hslogo margin"
+        src="/logos/HSFL_Logo.png"
+        alt="Hochschul Logo"
+      />
+    </div>
+    <div>
+      <img
+        class="logo margin"
+        src="/logos/FL_LOGO_zwischenhimmelundfoerde_FARBIG.png"
+        alt="Logo zwischen Himmel und Foerde"
+      />
+    </div>
+  </div>
+</div>
 {%endblock%}

@@ -7,6 +7,7 @@
   font-family: gill_italic;
   src: url(../fonts/gillSans_italic.TTF);
 }
+
 body {
   margin: 0;
   width: auto;
@@ -39,8 +40,10 @@ input.larger {
   margin: 1em;
 }
 .errors {
-  color: rgb(15, 4, 4);
-  background-color: red;
+  color: #fffbd8;
+  text-align: center;
+  background-color: #7e3c86;
+  padding: 2 2 3 2;
 }
 
 div {
@@ -102,10 +105,10 @@ img {
 
 .grid_container__form {
   display: grid;
-  max-width: fit-content;
-  grid-auto-rows: 1fr;
+  max-width: max-content;
+  grid-auto-flow: row;
   grid-template-columns: 0.47fr 1fr;
-  grid-template-rows: 0.25fr 0.75fr 0.75fr 0.75fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-rows: 0.25fr 0.75fr 0.75fr 0.75fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
 
   grid-template-areas:
     "subheadline_2 subheadline_2"
@@ -118,26 +121,28 @@ img {
     "name__label name__input"
     "email__label email__input"
     "datenweiter__text datenweiter__text"
-    "datenschutz__input_label datenschutz__input_label"
-    "abschicken__button abschicken__button"
-    "filmkorte__link filmkorte__link"
-    "logos logos"
-    "logos logos"
-    "logos logos";
+    "datenschutz__input datenschutz__label"
+    "abschicken__button abschicken__button";
 }
+
 .datenweiter__text {
   grid-area: datenweiter__text;
   place-self: center;
 }
-.datenschutz__input_label {
-  grid-area: datenschutz__input_label;
-
-  justify-self: start;
+.datenschutz__input {
+  grid-area: datenschutz__input;
+  margin-right: 1em;
   place-self: center;
-  display: ruby text;
+  justify-self: center;
+}
+.datenschutz__label {
+  grid-area: datenschutz__label;
+  align-self: center;
+  position: relative;
+  right: 3em;
 }
 .smallerFontLabel {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .text {
   grid-area: text;
@@ -152,7 +157,6 @@ img {
 
 .email__label {
   grid-area: email__label;
-
   justify-self: end;
 }
 
@@ -165,21 +169,26 @@ img {
   width: 40vw;
 }
 .subheadline_2 {
-  justify-self: center;
+  /* justify-self: center; */
   grid-area: subheadline_2;
+  place-self: center;
   /* margin: 0 0.1em 0 0.8em; */
   /* width: 60%; */
   font-size: 3vw;
 }
-
+.subheadline_3 {
+  grid-area: subheadline_3;
+  place-self: center;
+  /* justify-self: center; */
+  font-size: 3vw;
+}
 .filme {
   grid-area: filme;
   display: grid;
   grid-auto-columns: 1fr;
-  /* grid-auto-rows: 1fr; */
+  grid-auto-flow: row;
   grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
   grid-template-areas:
     "subgrid__input subgrid__label"
     "subgrid__input subgrid__label"
@@ -199,18 +208,14 @@ img {
 
 .subgrid__label {
   /* grid-area: subgrid__label; */
-  align-self: center;
+  align-self: center; margin-left: 1em;
+ 
 }
 .subgrid__input {
   /* grid-area: subgrid__input; */
-  margin-right: 1em;
+  margin-left: 2em;
   place-self: center;
   justify-self: end;
-}
-.subheadline_3 {
-  grid-area: subheadline_3;
-  place-self: center;
-  font-size: 3vw;
 }
 
 .lieblingsfilm__input {
@@ -232,6 +237,19 @@ img {
   padding: 1.5em;
   border-radius: 15px 50px;
 }
+.grid_container__links {
+  display: grid;
+  max-width: max-content;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  grid-template-areas:
+    "filmkorte__link filmkorteSocial__icons"
+    "logoArea logoArea"
+    "logoArea logoArea"
+    "logoArea logoArea";
+}
 .filmkorte__link {
   grid-area: filmkorte__link;
   position: relative;
@@ -239,24 +257,28 @@ img {
   background-color: transparent;
   place-self: center;
 }
-.filmkorteFB__icon_1 {
-  place-self: center;
+.filmkorteSocial__icons {
+  grid-area: filmkorteSocial__icons;
   position: relative;
-  left: 2.2em;
+  left: 1.3em;
+  place-self: center;
+}
+.filmkorteFB__icon_1 {
+  position: relative;
+  left: .5em;
   max-width: 20%;
   background-color: transparent;
-  place-self: start;
 }
 
 .filmkorteInsta_icon_2 {
-  place-self: center;
   position: relative;
-  top: 1.3em;
+  top: .3em;
+  left: 1em;
   max-width: 24%;
-  place-self: end;
+  /* place-self: end; */
 }
 
-.logos > div,
+.logoArea > div,
 .textLogos {
   background-color: transparent;
   display: flex;
@@ -267,8 +289,8 @@ img {
   /* justify-self: center; */
 }
 
-.logos {
-  grid-area: logos;
+.logoArea {
+  grid-area: logoArea;
 }
 
 .filmkorteLogo {
@@ -285,7 +307,125 @@ img {
 }
 
 @media screen and (min-width: 500px) {
-  p {
-    /* font-size: 2em; */
+  img {
+    max-width: 71%;
+  }
+  h2 {
+    font-size: 4.5vw;
+  }
+  label {
+    font-size: 0.9em;
+  }
+  .grid_container__intro {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "pirat headline headline piratin"
+      "pirat intro__text intro__text piratin";
+    justify-content: center;
+  }
+  .pirat,
+  .piratin {
+    margin-left: 1em;
+    align-self: end;
+  }
+  .grid_container__form {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+    justify-content: center;
+    grid-template-areas:
+      "subheadline_2 subheadline_2 subheadline_2 "
+      "filme filme filme "
+      "subheadline_3 subheadline_3 subheadline_3 "
+      "lieblingsfilm__input lieblingsfilm__input lieblingsfilm__input"
+      "text text text"
+      "name__label name__input  name__input"
+      "email__label email__input email__input"
+      "datenweiter__text datenweiter__text datenweiter__text"
+      "datenschutz__input datenschutz__label datenschutz__label"
+      "abschicken__button  abschicken__button  abschicken__button";
+  }
+
+  .subheadline_2,
+  .subheadline_3 {
+    font-size: 1vw;
+  }
+  .lieblingsfilm__input {
+    grid-area: lieblingsfilm__input;
+  }
+  .logoArea {
+    display: flex;
+  }
+  .logo {
+    max-width: 20%;
+  }
+  .hslogo {
+    max-width: 40%;
+  }
+  .text {
+    grid-area: text;
+    align-self: center;
+    text-align: center;
+  }
+  .name__label {
+    justify-self: end;
+  }
+  .name__input {
+    grid-column-end: 2;
+  }
+
+  .filme {
+    grid-area: filme;
+    grid-template-columns: 0.5fr 1fr 0.5fr 1fr;
+    grid-template-areas:
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label subgrid__input subgrid__label"
+      "subgrid__input subgrid__label";
+  }
+  .subgrid__input {
+    margin-right: 0.6em;
+  }
+  .grid_container__links {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1f;
+    justify-content: center;
+    grid-template-areas:
+      "filmkorte__link filmkorteSocial__icons filmkorteSocial__icons"
+      "textLogos textLogos textLogos"
+      "logoArea logoArea logoArea"
+      "logoArea logoArea logoArea";
+  }
+  .textLogos {
+    grid-column-start: 2;
+  }
+  .logo {
+    max-width: 60%;
+  }
+  .filmkorteFB__icon_1 {
+    /* place-self: center; */
+    position: relative;
+    left: 2.2em;
+    max-width: 10%;
+    background-color: transparent;
+    /* place-self: start; */
+  }
+
+  .filmkorteInsta_icon_2 {
+    /* place-self: center; */
+    position: relative;
+    top: 1em;
+    max-width: 12%;
+    place-self: center;
+  }
+  .filmkorteLogo,
+  .hslogo {
+    max-width: 80%;
   }
 }

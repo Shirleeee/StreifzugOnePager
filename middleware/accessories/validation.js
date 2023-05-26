@@ -2,17 +2,15 @@ import { debug as Debug } from "https://deno.land/x/debug@0.2.0/mod.ts";
 
 const debug = Debug("app:validation");
 
-// const isValidCommentText = (text) => text.length >= 1 && text.length <= 30;
 const isValidNameText = (text) => text.length >= 2 && text.length <= 45;
 const isValidLieblingsfilmText = (text) =>
   text.length >= 4 && text.length <= 45;
 
-function isValidEmail(email) {
-  const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
-/////////////////////////////////
+// function isValidEmail(email) {
+//   const re =
+//     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//   return re.test(String(email).toLowerCase());
+// }
 
 ///////////////////////////////////////////////////////
 export const validateParticipation = async (data) => {

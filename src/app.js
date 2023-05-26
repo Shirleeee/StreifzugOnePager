@@ -19,7 +19,7 @@ nunjucks.configure("templates", {
 import { routes } from "./../middleware/router.js";
 const sessionStore = new Map();
 const tokenMap = new Map();
-client.run();
+// client.run();
 export const handleRequest = async (request) => {
   //   // debug("@handleRequest. request %O", request);
 
