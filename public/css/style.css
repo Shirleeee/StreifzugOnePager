@@ -25,6 +25,7 @@ label {
 h1 {
   font-family: gill_bold;
   font-size: 3.2rem;
+  margin: .1em;
 }
 h2 {
   font-family: gill_bold;
@@ -43,7 +44,7 @@ input.larger {
   color: #fffbd8;
   text-align: center;
   background-color: #7e3c86;
-  padding: .2em;
+  padding: 0.2em;
 }
 
 div {
@@ -56,10 +57,8 @@ button {
   background-color: #7e3c86;
   color: #fffbd8;
   font-family: gill_bold;
-  /* margin-left: 1em;
-  margin-right: 1em;
-  width: 90%; */
 }
+
 .flex {
   display: flex;
 }
@@ -73,8 +72,7 @@ img {
 .grid_container__intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-auto-flow: row;
+  grid-template-rows: 1fr 0.25fr ;
   grid-template-areas:
     "headline headline "
     "pirat piratin "
@@ -85,8 +83,7 @@ img {
   grid-area: pirat;
   display: flex;
   justify-self: end;
-  /* margin-left: 1em; */
-  /* align-self: end; */
+  max-width: 55%;
 }
 .piratin {
   grid-area: piratin;
@@ -166,10 +163,9 @@ img {
 #txtbox__smaller {
   font-size: 18pt;
   height: 42px;
-  width: 40vw;
+  width: 45vw;
 }
 .subheadline_2 {
-
   grid-area: subheadline_2;
   text-align: center;
   font-size: 3vw;
@@ -185,7 +181,6 @@ img {
   grid-auto-columns: 1fr;
   grid-auto-flow: row;
   grid-template-columns: 0.5fr 1fr;
-  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
   grid-template-areas:
     "subgrid__input subgrid__label"
     "subgrid__input subgrid__label"
@@ -200,7 +195,6 @@ img {
     "subgrid__input subgrid__label"
     "subgrid__input subgrid__label"
     "subgrid__input subgrid__label";
-  /* width: max-content; */
 }
 
 .subgrid__label {
@@ -272,7 +266,6 @@ img {
   top: 0.3em;
   left: 1em;
   max-width: 24%;
-  /* place-self: end; */
 }
 
 .logoArea > div,
@@ -283,11 +276,12 @@ img {
   background-color: transparent;
   place-items: center;
   align-items: center;
-  /* justify-self: center; */
 }
 
 .logoArea {
   grid-area: logoArea;
+  border: 5px solid #7e3c86;
+  margin: 2em;
 }
 
 .filmkorteLogo {
@@ -325,6 +319,12 @@ img {
     margin-left: 1em;
     align-self: end;
   }
+  .intro__text{
+    text-align: center;
+  }
+  .pirat {
+    max-width: 80%;
+  }
   .grid_container__form {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
@@ -341,23 +341,18 @@ img {
       "datenschutz__input datenschutz__label datenschutz__label"
       "abschicken__button  abschicken__button  abschicken__button";
   }
-
+  #txtbox__smaller {
+    
+    width: 54vw;
+  }
   .subheadline_2,
   .subheadline_3 {
-    font-size: 1vw; 
+    font-size: 1vw;
   }
   .lieblingsfilm__input {
     grid-area: lieblingsfilm__input;
   }
-  .logoArea {
-    display: flex;
-  }
-  .logo {
-    max-width: 20%;
-  }
-  .hslogo {
-    max-width: 40%;
-  }
+
   .text {
     grid-area: text;
     align-self: center;
@@ -390,23 +385,28 @@ img {
     margin-right: 0.6em;
   }
   .subgrid__label {
-    margin-left: .3em;
+    margin-left: 0.3em;
   }
   .grid_container__links {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 1f;
+    grid-template-rows: 1fr;
     justify-content: center;
     grid-template-areas:
       "filmkorte__link . filmkorteSocial__icons"
-      "textLogos textLogos textLogos"
-      "logoArea logoArea logoArea"
-      "logoArea logoArea logoArea";
+      "textLogos textLogos textLogos";
+  }
+  .logoArea {
+    grid-area: unset;
+  }
+
+  .hslogo {
+    max-width: 40%;
   }
   .textLogos {
     grid-column-start: 2;
   }
   .logo {
-    max-width: 60%;
+    max-width: 80%;
   }
   .filmkorteFB__icon_1 {
     left: 2.2em;
@@ -416,10 +416,28 @@ img {
   .filmkorteInsta_icon_2 {
     left: 4em;
     max-width: 22%;
+    top: .09em;
   }
 
   .filmkorteLogo,
   .hslogo {
     max-width: 80%;
+  }
+}
+@media screen and (min-width: 650px) {
+  .datenschutz__input {
+    margin-right: -1.5em;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .datenschutz__input {
+    margin-right: -6.5em;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .datenschutz__input {
+    margin-right: -10.5em;
   }
 }
