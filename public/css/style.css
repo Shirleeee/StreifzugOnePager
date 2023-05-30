@@ -136,7 +136,7 @@ img {
   grid-area: datenschutz__label;
   align-self: center;
   position: relative;
-  right: 3em;
+  right: 1em;
 }
 .smallerFontLabel {
   font-size: 1em;
