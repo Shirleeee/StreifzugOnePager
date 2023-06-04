@@ -5,20 +5,12 @@ import { debug as Debug } from "https://deno.land/x/debug@0.2.0/mod.ts";
 import * as sessions from "../middleware/sessions.js";
 const debug = Debug("app:controller");
 
-export function index(ctx) {
-  ctx.response.body = ctx.nunjucks.render("index.html", {});
-  ctx.response.status = 200;
-  ctx.response.headers["content-type"] = "text/html";
-
-  return ctx;
-}
-
 export async function Lieblingsfilm_add(ctx) {
   // debug("@lieblingsfilm.  --data--> %O", ctx.db);
   const token = csrf.generateToken();
   ctx.token.set("tokenLiebling", token);
 
-  ctx.response.body = ctx.nunjucks.render("lieblingsfilm.html", {
+  ctx.response.body = ctx.nunjucks.render("index.html", {
     form: {
       _csrf: token,
     },
@@ -47,7 +39,7 @@ export async function lieblingsfilm_submit(ctx) {
   if (Object.values(errors).length > 0) {
     debug("@lieblinsfilm_submit.  --data--> %O", data);
 
-    ctx.response.body = ctx.nunjucks.render("lieblingsfilm.html", {
+    ctx.response.body = ctx.nunjucks.render("index.html", {
       form: data,
       errors: errors,
     });

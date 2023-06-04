@@ -1,4 +1,577 @@
 {% extends 'layout.html' %} {%block content %}
 
-<a href="/lieblingsfilm"> <h1>lieblinsgfilm</h1></a>
+<div class="grid_container__intro">
+  <!-- <div class="pirat"> -->
+  <img class="pirat" src="/img/pirat.png" alt="ein Pirat" />
+  <!-- </div> -->
+  <!-- <div class="piratin"> -->
+  <img class="piratin" src="/img/piratin.png" alt="eine Piratin" />
+  <!-- </div> -->
+  <div class="headline">
+    <h1 class=" ">
+      Streifzug <br />
+      für Kinder 2023
+    </h1>
+  </div>
+
+  <div class="intro__text margin">
+    <p>
+      Liebe Kinder! <br />
+      Wir hoffen, Ihr hattet einen spannenden Streifzug und habt ordentlich
+      Beute gemacht!?
+    </p>
+    <p>Nun wüssten wir gern:</p>
+  </div>
+</div>
+
+{% if errors.name %}
+<p class="errors">{{ errors.name }}</p>
+{% endif %} {% if errors.filme %}
+<p class="errors">{{ errors.filme }}</p>
+{% endif %} {% if errors.lieblingsfilm %}
+<p class="errors">{{ errors.lieblingsfilm }}</p>
+{% endif %}
+
+<form action="/lieblingsfilm" method="POST">
+  <input type="hidden" name="_csrf" value="{{ form.csrf }}" />
+  <div class="grid_container__form">
+    <div class="text margin">
+      <p>
+        Wenn Ihr möchtet und Eure Eltern einverstanden sind, könnt Ihr noch bei
+        unserem Gewinnspiel mitmachen. <br />
+        Wir verlosen unter allen, die hier mit abstimmen,
+      </p>
+      <p>
+        <b>
+          5 x 2 Eintrittskarten für das Kinderprogramm im 51 Stufen Kino im
+          Deutschen Haus.</b
+        >
+        <br />
+      </p>
+      <p>Dazu brauchen wir aber:</p>
+    </div>
+    <div class="name__label margin">
+      <label>Deinen Namen: </label>
+    </div>
+    <div class="name__input margin">
+      {% if errors.name %}
+      <p class="errors">{{ errors.name }}</p>
+      {% endif %}
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        value="{{ form.name }}"
+        required="required"
+        id="txtbox__smaller"
+      />
+    </div>
+
+    <div class="email__label margin">
+      <label>E-mail Deiner Eltern / Begleitpersonen:</label>
+    </div>
+    <div class="email__input margin">
+      {% if errors.email %}
+      <p class="errors">{{ errors.email }}</p>
+      {% endif %}
+      <input
+        type="text"
+        name="email"
+        placeholder="E-Mail"
+        value="{{ form.email }}"
+        id="txtbox__smaller"
+      />
+    </div>
+    <div class="subheadline_2 margin">
+      <h2>
+        Welche Filme habt Ihr gesehen? <br />
+        (bitte markieren)
+      </h2>
+    </div>
+
+    <!-- ////////////////////////! -->
+
+    <div class="filme">
+      <div class="subgrid__input">
+        {% set x = false %} {% for item in form.filme %} {% if item ==
+        "Dans_la_nature" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Dans_la_nature"
+          checked
+        />
+        {% set x = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Dans_la_nature"
+        />
+        {% endif %} {% if x == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="In_der_Natur"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>In der Natur</label>
+      </div>
+
+      <div class="subgrid__input">
+        {% set w = false %} {% for item in form.filme %} {% if item ==
+        "Aufgeplustert" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Aufgeplustert"
+          checked
+        />
+        {% set w = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Aufgeplustert"
+        />
+        {% endif %} {% if w == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Aufgeplustert"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Aufgeplustert</label>
+      </div>
+      <div class="subgrid__input">
+        {% set v = false %} {% for item in form.filme %} {% if item ==
+        "Neulich_im_Atelier" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Neulich_im_Atelier"
+          checked
+        />
+        {% set v = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Neulich_im_Atelier"
+        />
+        {% endif %} {% if v == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Neulich_im_Atelier"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Neulich im Atelier</label>
+      </div>
+      <div class="subgrid__input">
+        {% set u = false %} {% for item in form.filme %} {% if item ==
+        "Mister_Paper" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Mister_Paper"
+          checked
+        />
+        {% set u = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Mister_Paper"
+        />
+        {% endif %} {% if u == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Mister_Paper"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Mister Paper</label>
+      </div>
+      <div class="subgrid__input">
+        {% set t = false %} {% for item in form.filme %} {% if item ==
+        "Our_wonderful_nature" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Our_wonderful_nature"
+          checked
+        />
+        {% set t = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Our_wonderful_nature"
+        />
+        {% endif %} {% if t == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Our_wonderful_nature"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Our wonderful nature</label>
+      </div>
+      <div class="subgrid__input">
+        {% set s = false %} {% for item in form.filme %} {% if item ==
+        "Some_Thing" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Some_Thing"
+          checked
+        />
+        {% set s = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input type="checkbox" class="larger" name="filme" value="Some_Thing" />
+        {% endif %} {% if s == false and errors%}
+        <input type="checkbox" class="larger" name="filme" value="Some_Thing" />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Some Thing</label>
+      </div>
+      <div class="subgrid__input">
+        {% set r = false %} {% for item in form.filme %} {% if item == "Gelato"
+        %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Gelato"
+          checked
+        />
+        {% set r = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input type="checkbox" class="larger" name="filme" value="Gelato" />
+        {% endif %} {% if r == false and errors%}
+        <input type="checkbox" class="larger" name="filme" value="Gelato" />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Gelato - die sieben Sommer der Eisliebe</label>
+      </div>
+      <div class="subgrid__input">
+        {% set q = false %} {% for item in form.filme %} {% if item ==
+        "Ich_habe_keine_Angst" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Ich_habe_keine_Angst"
+          checked
+        />
+        {% set q = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Ich_habe_keine_Angst"
+        />
+        {% endif %} {% if q == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Ich_habe_keine_Angst"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Ich habe keine Angst</label>
+      </div>
+      <div class="subgrid__input">
+        {% set p = false %} {% for item in form.filme %} {% if item ==
+        "square.record.play" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="square.record.play"
+          checked
+        />
+        {% set p = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="square.record.play"
+        />
+        {% endif %} {% if p == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="square.record.play"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>square.record.play</label>
+      </div>
+      <div class="subgrid__input">
+        {% set o = false %} {% for item in form.filme %} {% if item ==
+        "Meinungsverschiedenheiten" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Meinungsverschiedenheiten"
+          checked
+        />
+        {% set o = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Meinungsverschiedenheiten"
+        />
+        {% endif %} {% if o == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Meinungsverschiedenheiten"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Meinungsverschiedenheiten</label>
+      </div>
+      <div class="subgrid__input">
+        {% set n = false %} {% for item in form.filme %} {% if item == "META" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="META"
+          checked
+        />
+        {% set n = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input type="checkbox" class="larger" name="filme" value="META" />
+        {% endif %} {% if n == false and errors%}
+        <input type="checkbox" class="larger" name="filme" value="META" />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>META</label>
+      </div>
+      <div class="subgrid__input">
+        {% set m = false %} {% for item in form.filme %} {% if item ==
+        "Stromsparen" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Stromsparen"
+          checked
+        />
+        {% set m = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Stromsparen"
+        />
+        {% endif %} {% if m == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Stromsparen"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Stromsparen</label>
+      </div>
+
+      <div class="subgrid__input">
+        {% set l = false %} {% for item in form.filme %} {% if item ==
+        "Von_Faltbooten_und_Heringen" %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Von_Faltbooten_und_Heringen"
+          checked
+        />
+        {% set l = true %} {% endif %} {% endfor %} {% if not errors %}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Von_Faltbooten_und_Heringen"
+        />
+        {% endif %} {% if l == false and errors%}
+        <input
+          type="checkbox"
+          class="larger"
+          name="filme"
+          value="Von_Faltbooten_und_Heringen"
+        />
+        {% endif %}
+      </div>
+      <div class="subgrid__label">
+        <label>Von Faltbooten und Heringen</label>
+      </div>
+    </div>
+    <!-- ////////////////! -->
+
+    <div class="subheadline_3 margin">
+      <h2>
+        Und welcher Film hat Euch am Besten gefallen? <br />
+        (bitte Titel eingeben)
+      </h2>
+    </div>
+
+    <div class="lieblingsfilm__input">
+      {% if errors.lieblingsfilm %}
+
+      <p class="errors">{{ errors.lieblingsfilm }}</p>
+      {% endif %}
+      <input
+        type="text"
+        name="lieblingsfilm"
+        placeholder="Lieblingsfilm"
+        value="{{ form.lieblingsfilm }}"
+        required="required"
+        id="txtbox"
+      />
+    </div>
+    <div class="datenweiter__text margin">
+      <p>
+        (Wir geben die Info nicht weiter und speichern sie auch nicht für
+        irgendwas)
+      </p>
+    </div>
+
+    <div class="datenschutz__input">
+      <input
+        class="larger"
+        type="checkbox"
+        name="Datenschutzerklaerung"
+        value="akzeptiert"
+        required
+      />
+    </div>
+    <div class="datenschutz__label">
+      <label class="smallerFontLabel"
+        ><a href="https://filmkorte.de/rechtliches/datenschutz"
+          >Einwilligung zur Datenschutzerklärung</a
+        ></label
+      >
+    </div>
+
+    <div class="abschicken__button">
+      <button class="button" type="submit">Abschicken!</button>
+    </div>
+  </div>
+</form>
+
+<div class="grid_container__links">
+  <div class="filmkorte__link margin flex">
+    <div class="website__text">
+      <p class="smallerFontLabel">
+        <br />Alles über&nbsp;
+        <a target="_blank" href="https://filmkorte.de/"> filmkorte</a>
+        &nbsp;auf unserer Website.
+      </p>
+    </div>
+  </div>
+
+  <div class="filmkorteSocial__icons">
+    <p class="smallerFontLabel">Folgt uns auf:</p>
+    <a
+      target="_blank"
+      href="https://www.facebook.com/Filmkorte-eV-100829078801775/"
+    >
+      <img
+        class="filmkorteFB__icon_1"
+        src="svg/facebook-color-svgrepo-com.svg"
+        alt="Facebook"
+    /></a>
+
+    <a target="_blank" href="https://www.instagram.com/filmkorte"
+      ><img
+        class="filmkorteInsta_icon_2"
+        src="svg/instagram-1-svgrepo-com.svg"
+        alt="Instagram"
+    /></a>
+  </div>
+
+  <div class="logoArea">
+    <p class="textLogos smallerFontLabel margin">gefördert durch:</p>
+
+    <div class="placeCenter">
+      <img
+        class="logo margin"
+        src="logos/FL_LOGO_zwischenhimmelundfoerde_FARBIG.png"
+        alt="Logo - Zwischen Himmel und Foerde"
+      />
+    </div>
+    <div>
+      <img
+        class="logo margin"
+        src="logos/europa-universitaet-logo.png"
+        alt="Logo - Europa Universität"
+      />
+    </div>
+    <div>
+      <img
+        class="logo margin"
+        src="logos/HSFL_Logo.png"
+        alt="Logo - Hochschule Flensburg"
+      />
+    </div>
+    <div>
+      <img
+        class="logo margin"
+        src="logos/Innenstadt_Logo_Motiv_Gurke_NEG.png"
+        alt="Logo - Deine Idee Deine Innenstadt"
+      />
+    </div>
+
+    <div>
+      <img
+        class="logo margin"
+        src="logos/klein_sh_innen_logo_4c_gross_MIKWS.png"
+        alt="Logo - Schleswig
+      Holstein Innenministerium"
+      />
+    </div>
+    <div class="placeCenter">
+      <img
+        class="logo margin"
+        src="/logos/logo-filmkorte.jpg"
+        alt="Logo - zwischen Himmel und Foerde"
+      />
+    </div>
+  </div>
+</div>
 {%endblock%}
