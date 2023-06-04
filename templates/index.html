@@ -1,12 +1,8 @@
 {% extends 'layout.html' %} {%block content %}
 
 <div class="grid_container__intro">
-  <!-- <div class="pirat"> -->
   <img class="pirat" src="/img/pirat.png" alt="ein Pirat" />
-  <!-- </div> -->
-  <!-- <div class="piratin"> -->
   <img class="piratin" src="/img/piratin.png" alt="eine Piratin" />
-  <!-- </div> -->
   <div class="headline">
     <h1 class=" ">
       Streifzug <br />
@@ -32,10 +28,10 @@
 <p class="errors">{{ errors.lieblingsfilm }}</p>
 {% endif %}
 
-<form action="/lieblingsfilm" method="POST">
+<form action="/" method="POST">
   <input type="hidden" name="_csrf" value="{{ form.csrf }}" />
   <div class="grid_container__form">
-    <div class="text margin">
+    <div class="text">
       <p>
         Wenn Ihr möchtet und Eure Eltern einverstanden sind, könnt Ihr noch bei
         unserem Gewinnspiel mitmachen. <br />
@@ -50,10 +46,10 @@
       </p>
       <p>Dazu brauchen wir aber:</p>
     </div>
-    <div class="name__label margin">
+    <div class="name__label">
       <label>Deinen Namen: </label>
     </div>
-    <div class="name__input margin">
+    <div class="name__input">
       {% if errors.name %}
       <p class="errors">{{ errors.name }}</p>
       {% endif %}
@@ -67,10 +63,10 @@
       />
     </div>
 
-    <div class="email__label margin">
+    <div class="email__label">
       <label>E-mail Deiner Eltern / Begleitpersonen:</label>
     </div>
-    <div class="email__input margin">
+    <div class="email__input">
       {% if errors.email %}
       <p class="errors">{{ errors.email }}</p>
       {% endif %}
@@ -461,7 +457,7 @@
         placeholder="Lieblingsfilm"
         value="{{ form.lieblingsfilm }}"
         required="required"
-        id="txtbox"
+        id="txtbox__smaller"
       />
     </div>
     <div class="datenweiter__text margin">
@@ -481,7 +477,7 @@
       />
     </div>
     <div class="datenschutz__label">
-      <label class="smallerFontLabel"
+      <label class=""
         ><a href="https://filmkorte.de/rechtliches/datenschutz"
           >Einwilligung zur Datenschutzerklärung</a
         ></label
@@ -496,17 +492,15 @@
 
 <div class="grid_container__links">
   <div class="filmkorte__link margin flex">
-    <div class="website__text">
-      <p class="smallerFontLabel">
-        <br />Alles über&nbsp;
-        <a target="_blank" href="https://filmkorte.de/"> filmkorte</a>
-        &nbsp;auf unserer Website.
-      </p>
-    </div>
+    <p class="">
+      <br />Alles über&nbsp;
+      <a target="_blank" href="https://filmkorte.de/"> filmkorte&nbsp;</a>
+      auf unserer Website.
+    </p>
   </div>
 
   <div class="filmkorteSocial__icons">
-    <p class="smallerFontLabel">Folgt uns auf:</p>
+    <p class="">Folgt uns auf:</p>
     <a
       target="_blank"
       href="https://www.facebook.com/Filmkorte-eV-100829078801775/"
@@ -526,7 +520,7 @@
   </div>
 
   <div class="logoArea">
-    <p class="textLogos smallerFontLabel margin">gefördert durch:</p>
+    <p class="textLogos margin">gefördert durch:</p>
 
     <div class="placeCenter">
       <img

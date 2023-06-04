@@ -7,29 +7,79 @@
   font-family: gill_italic;
   src: url(../fonts/gillSans_italic.TTF);
 }
+/* thank you site */
+.thanyou_grid_container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
+  grid-template-areas:
+    "pirat piratin"
+    "danke_h1 danke_h1"
+    "danke_p danke_p"
+    "melden_p melden_p";
+}
+.melden_p {
+  grid-area: melden_p;
+  text-align: center;
+}
+.danke_p {
+  grid-area: danke_p;
+
+  text-align: center;
+}
+.danke_h1 {
+  grid-column: 1 / span 2;
+  font-size: 3rem;
+  align-self: center;
+  justify-self: center;
+}
+/* error site */
+.error_center {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.error_pirat {
+  grid-column: 1;
+}
+.error_piratin {
+  grid-column: 4;
+}
+.error_txt_nochmal {
+  grid-column: 2;
+}
+.error_pirat,
+.error_piratin {
+  width: 50%;
+}
+
+/* main site  */
 body {
   margin: 0;
   width: auto;
   overflow-wrap: break-word;
-  overflow-x: hidden;
 }
 p {
-  font-size: 1.3em;
-  font-family: gill_italic, Verdana, Arial, Helvetica, sans-serif;
-  line-height: 1.7rem;
-}
-label, input { font: inherit;
   font-size: 1.1rem;
+  font-family: gill_italic, Verdana, Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
+}
+label,
+input {
+  font: inherit;
+}
+input {
+  letter-spacing: 0.07rem;
 }
 h1 {
   font-family: gill_bold, Verdana, Arial, Helvetica, sans-serif;
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   margin: 0.1rem;
 }
 h2 {
   font-family: gill_bold, Verdana, Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 input.larger {
@@ -84,28 +134,34 @@ img {
   display: flex;
   justify-self: end;
   max-width: 55%;
+  padding-top: 0.7rem;
 }
 .piratin {
   grid-area: piratin;
+  padding-top: 0.7rem;
 }
 .headline {
   grid-area: headline;
   text-align: center;
+  padding-top: 0.7rem;
 }
 
 .intro__text {
   grid-area: intro__text;
   place-self: center;
 }
+a:link {
+  color: #4c3f8a;
+}
 
 /* ////////////////! */
 
 .grid_container__form {
   display: grid;
-  max-width: max-content;
   grid-auto-flow: row;
-  grid-template-columns: 0.47fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.25fr 0.75fr 0.75fr 0.75fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+  justify-content: center;
 
   grid-template-areas:
     "subheadline_2 subheadline_2"
@@ -130,51 +186,60 @@ img {
   grid-area: datenschutz__input;
   margin-right: 1rem;
   place-self: center;
-  justify-self: center;
+  justify-self: end;
 }
 .datenschutz__label {
   grid-area: datenschutz__label;
   align-self: center;
   justify-self: start;
+}
+.datenschutz__input,
+.datenschutz__label {
   position: relative;
   right: 3rem;
-}
-.smallerFontLabel {
-  font-size: 1.2rem;
 }
 .text {
   grid-area: text;
 }
 .name__label {
   grid-area: name__label;
+  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
+  align-self: center;
 }
 
 .name__input {
   grid-area: name__input;
+  align-self: center;
+  justify-self: start;
+  margin-right: 1rem;
 }
 
 .email__label {
+  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
   grid-area: email__label;
-  justify-self: end;
+  align-self: center;
 }
 
 .email__input {
   grid-area: email__input;
+  align-self: center;
+  justify-self: start;
+  margin-right: 1rem;
 }
 #txtbox__smaller {
-  font-size: 18pt;
+  font-size: 1.3rem;
   height: 42px;
-  width: 45vw;
+  width: 100%;
+  margin: 0.5rem 0 0.5rem 0;
 }
 .subheadline_2 {
   grid-area: subheadline_2;
+
   text-align: center;
-  font-size: 3vw;
 }
 .subheadline_3 {
   grid-area: subheadline_3;
   text-align: center;
-  font-size: 3vw;
 }
 .filme {
   grid-area: filme;
@@ -201,7 +266,7 @@ img {
 .subgrid__label {
   /* grid-area: subgrid__label; */
   align-self: center;
-  margin-left: 1rem;
+  margin-left: .3rem;
 }
 .subgrid__input {
   /* grid-area: subgrid__input; */
@@ -215,11 +280,7 @@ img {
   place-self: center;
   max-width: 90%;
 }
-#txtbox {
-  font-size: 18pt;
-  height: 42px;
-  width: 300px;
-}
+
 .abschicken__button {
   grid-area: abschicken__button;
   place-self: center;
@@ -246,27 +307,29 @@ img {
   grid-area: filmkorte__link;
   position: relative;
   left: 1.3rem;
+  width: 100%;
   background-color: transparent;
   place-self: center;
 }
 .filmkorteSocial__icons {
   grid-area: filmkorteSocial__icons;
   position: relative;
-  left: 1.3rem;
+
   place-self: center;
+  width: 50%;
 }
 .filmkorteFB__icon_1 {
   position: relative;
   left: 0.5rem;
-  max-width: 20%;
+  max-width: 40%;
   background-color: transparent;
 }
 
 .filmkorteInsta_icon_2 {
   position: relative;
-  top: 0.3rem;
+  top: 0.1rem;
   left: 1em;
-  max-width: 24%;
+  max-width: 44%;
 }
 
 .logoArea > div,
@@ -274,7 +337,7 @@ img {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
+
   place-items: center;
   align-items: center;
   margin-bottom: 2rem;
@@ -285,24 +348,33 @@ img {
   border: 5px solid #7e3c86;
   margin: 2rem;
 }
-
+@media screen and (min-width: 400px) {
+  h1 {
+    font-size: 3.3rem;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 500px) {
-
-  
   img {
     max-width: 71%;
   }
   h2 {
     font-size: 4.5vw;
   }
- 
+
   .grid_container__intro {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "pirat headline headline piratin"
       "pirat intro__text intro__text piratin";
     justify-content: center;
-    grid-template-rows: .75fr 0.25fr;
+    grid-template-rows: 0.75fr 0.25fr;
   }
   .headline {
     grid-column: 1 / span 4;
@@ -352,13 +424,19 @@ img {
     align-self: center;
     text-align: center;
   }
-  .name__label {
-    justify-self: end;
-  }
+
   .name__input {
     grid-column-end: 2;
   }
-
+  .datenschutz__input {
+    margin-right: 1rem;
+    place-self: center;
+    justify-self: end;
+  }
+  .datenschutz__label {
+    align-self: center;
+    justify-self: start;
+  }
   .filme {
     grid-area: filme;
     grid-template-columns: 0.25fr 1.25fr 0.25fr 1.25fr;
@@ -389,22 +467,16 @@ img {
   }
   .filmkorteFB__icon_1 {
     left: 2.2rem;
-    max-width: 20%;
+  
   }
 
   .filmkorteInsta_icon_2 {
     left: 4rem;
-    max-width: 22%;
+  
     top: 0.09rem;
   }
 }
 @media screen and (min-width: 650px) {
-  .datenschutz__input {
-    margin-right: -1.5rem;
-  }
-  .datenschutz__label {
-    right: 1rem;
-  }
   .grid_container__links {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -422,44 +494,51 @@ img {
   }
   .filmkorteSocial__icons,
   .filmkorte__link {
-    place-self: flex-start;
+    place-self: inherit;
   }
   .placeCenter {
     align-self: center;
   }
   .filmkorte__link {
     /* align-self: flex-end; */
-    justify-self: right;
+    justify-self: end;left: 3.3rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  label,
+  input {
+    font-size: 1rem;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .datenschutz__input {
-    margin-right: -2.5rem;
-  }
   h2 {
     font-size: 2rem;
   }
 }
 @media screen and (min-width: 900px) {
-  .datenschutz__input {
-    margin-right: -2.5rem;
+  label {
+    font-size: 1.1rem;
   }
-  .datenschutz__label {
-    right: 3rem;
-  }
-  label{font-size: 1.5rem;}
 }
 
 @media screen and (min-width: 1250px) {
-  .datenschutz__input {
-    margin-right: -5.5rem;
-  }
-  .datenschutz__label {
-    margin-right: -5rem;
-  }
-
   .logo {
     max-width: 40%;
+  }
+  .pirat,
+  .piratin {
+    width: 60%;
+  }
+  .email__label {
+    display: ruby;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .pirat,
+  .piratin {
+    width: 50%;
   }
 }

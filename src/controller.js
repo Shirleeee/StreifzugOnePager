@@ -52,7 +52,7 @@ export async function lieblingsfilm_submit(ctx) {
   csrf.checkToken(ctx, "tokenLiebling", data._csrf, "/error");
   data.filme = formData.getAll("filme").toString();
 
-  zuschauerModel.addToDB(ctx.db, data);
+  zuschauerModel.addToDB(ctx.db.default, data);
 
   ctx.redirect = Response.redirect(ctx.url.origin + "/thankyou", 303);
   return ctx;
