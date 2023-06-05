@@ -115,7 +115,7 @@ button {
 
 img {
   display: inline-block;
-  max-width: 50%;
+  max-width: 70%;
   height: auto;
 }
 
@@ -131,13 +131,14 @@ img {
 
 .pirat {
   grid-area: pirat;
-  display: flex;
+ 
   justify-self: end;
-  max-width: 55%;
+  max-width: 100%;
   padding-top: 0.7rem;
 }
 .piratin {
   grid-area: piratin;
+  max-width: 90%;
   padding-top: 0.7rem;
 }
 .headline {
@@ -385,12 +386,15 @@ a:link {
   .piratin {
     margin-left: 1rem;
     align-self: end;
+    max-width: 90%;
+
   }
+
   .intro__text {
     text-align: center;
   }
   .pirat {
-    max-width: 80%;
+    max-width: 100%;
   }
   .grid_container__form {
     grid-template-columns: repeat(3, 1fr);
@@ -473,7 +477,10 @@ a:link {
   .filmkorteInsta_icon_2 {
     left: 4rem;
   
-    top: 0.09rem;
+    top: 0.2rem;
+  }
+  .logo {
+    max-width: 50%;
   }
 }
 @media screen and (min-width: 650px) {
@@ -510,6 +517,9 @@ a:link {
   input {
     font-size: 1rem;
   }
+  .logo {
+    max-width: 70%;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -521,6 +531,10 @@ a:link {
   label {
     font-size: 1.1rem;
   }
+  .pirat,
+  .piratin {
+    max-width: 60%;
+  }
 }
 
 @media screen and (min-width: 1250px) {
@@ -529,16 +543,18 @@ a:link {
   }
   .pirat,
   .piratin {
-    width: 60%;
+    max-width: 50%;
   }
+
+
   .email__label {
     display: ruby;
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1650px) {
   .pirat,
   .piratin {
-    width: 50%;
+    max-width: 40%;
   }
 }
