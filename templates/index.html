@@ -46,38 +46,7 @@
       </p>
       <p>Dazu brauchen wir aber:</p>
     </div>
-    <div class="name__label">
-      <label>Deinen Namen: </label>
-    </div>
-    <div class="name__input">
-      {% if errors.name %}
-      <p class="errors">{{ errors.name }}</p>
-      {% endif %}
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value="{{ form.name }}"
-        required="required"
-        id="txtbox__smaller"
-      />
-    </div>
 
-    <div class="email__label">
-      <label>E-mail Deiner Eltern / Begleitpersonen:</label>
-    </div>
-    <div class="email__input">
-      {% if errors.email %}
-      <p class="errors">{{ errors.email }}</p>
-      {% endif %}
-      <input
-        type="text"
-        name="email"
-        placeholder="E-Mail"
-        value="{{ form.email }}"
-        id="txtbox__smaller"
-      />
-    </div>
     <div class="subheadline_2 margin">
       <h2>
         Welche Filme habt Ihr gesehen? <br />
@@ -452,12 +421,49 @@
       <p class="errors">{{ errors.lieblingsfilm }}</p>
       {% endif %}
       <input
+        class="input_larger"
         type="text"
         name="lieblingsfilm"
         placeholder="Lieblingsfilm"
         value="{{ form.lieblingsfilm }}"
         required="required"
-        id="txtbox__smaller"
+        id="lieblingsfilm"
+      />
+    </div>
+
+    <div class="name__input">
+      <div>
+        <label for="name">Deinen Namen: </label>
+      </div>
+      {% if errors.name %}
+      <p class="errors">{{ errors.name }}</p>
+      {% endif %}
+      <input
+        class="input_larger"
+        type="text"
+        name="name"
+        placeholder="Name"
+        value="{{ form.name }}"
+        required="required"
+        id="name"
+      />
+    </div>
+
+    <div class="email__input">
+      <div>
+        <label for="email">E-mail Deiner Eltern / Begleitpersonen:</label>
+      </div>
+
+      {% if errors.email %}
+      <p class="errors">{{ errors.email }}</p>
+      {% endif %}
+      <input
+        class="input_larger"
+        type="text"
+        name="email"
+        placeholder="E-Mail"
+        value="{{ form.email }}"
+        id="email"
       />
     </div>
     <div class="datenweiter__text margin">

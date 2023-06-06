@@ -52,7 +52,10 @@
 .error_piratin {
   width: 50%;
 }
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 /* main site  */
 body {
   margin: 0;
@@ -131,9 +134,9 @@ img {
 
 .pirat {
   grid-area: pirat;
- 
+
   justify-self: end;
-  max-width: 100%;
+  max-width: 90%;
   padding-top: 0.7rem;
 }
 .piratin {
@@ -172,8 +175,8 @@ a:link {
     "subheadline_3 subheadline_3"
     "lieblingsfilm__input lieblingsfilm__input"
     "text text"
-    "name__label name__input"
-    "email__label email__input"
+    "name__input name__input"
+    "email__input email__input"
     "datenweiter__text datenweiter__text"
     "datenschutz__input datenschutz__label"
     "abschicken__button abschicken__button";
@@ -202,32 +205,26 @@ a:link {
 .text {
   grid-area: text;
 }
-.name__label {
-  grid-area: name__label;
-  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
-  align-self: center;
-}
 
 .name__input {
+  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
+  width: 90%;
+
   grid-area: name__input;
   align-self: center;
   justify-self: start;
-  margin-right: 1rem;
-}
-
-.email__label {
-  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
-  grid-area: email__label;
-  align-self: center;
+  /* margin-right: 1rem; */
 }
 
 .email__input {
+  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
+  width: 90%;
   grid-area: email__input;
   align-self: center;
   justify-self: start;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 }
-#txtbox__smaller {
+.input_larger {
   font-size: 1.3rem;
   height: 42px;
   width: 100%;
@@ -267,7 +264,7 @@ a:link {
 .subgrid__label {
   /* grid-area: subgrid__label; */
   align-self: center;
-  margin-left: .3rem;
+  margin-left: 0.3rem;
 }
 .subgrid__input {
   /* grid-area: subgrid__input; */
@@ -387,7 +384,6 @@ a:link {
     margin-left: 1rem;
     align-self: end;
     max-width: 90%;
-
   }
 
   .intro__text {
@@ -398,7 +394,7 @@ a:link {
   }
   .grid_container__form {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-rows: 0.25fr 0.55fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
     justify-content: center;
     grid-template-areas:
       "subheadline_2 subheadline_2 subheadline_2 "
@@ -406,8 +402,8 @@ a:link {
       "subheadline_3 subheadline_3 subheadline_3 "
       "lieblingsfilm__input lieblingsfilm__input lieblingsfilm__input"
       "text text text"
-      "name__label name__input  name__input"
-      "email__label email__input email__input"
+      ". name__input  ."
+      ". email__input ."
       "datenweiter__text datenweiter__text datenweiter__text"
       "datenschutz__input datenschutz__label datenschutz__label"
       "abschicken__button  abschicken__button  abschicken__button";
@@ -471,12 +467,11 @@ a:link {
   }
   .filmkorteFB__icon_1 {
     left: 2.2rem;
-  
   }
 
   .filmkorteInsta_icon_2 {
     left: 4rem;
-  
+
     top: 0.2rem;
   }
   .logo {
@@ -508,7 +503,8 @@ a:link {
   }
   .filmkorte__link {
     /* align-self: flex-end; */
-    justify-self: end;left: 3.3rem;
+    justify-self: end;
+    left: 3.3rem;
   }
   p {
     font-size: 1.2rem;
@@ -545,7 +541,6 @@ a:link {
   .piratin {
     max-width: 50%;
   }
-
 
   .email__label {
     display: ruby;
