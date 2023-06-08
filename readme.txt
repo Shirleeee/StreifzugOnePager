@@ -6,11 +6,14 @@ DENO/JS
 HTML/CSS
 MySQL
 
-Gestartet im Debugmodus mit folgenden Eingaben:
+Zur Ansicht kann Gestartet im Debugmodus mit folgenden Eingaben:
 
 $env:DEBUG = "*"
 
 deno run --allow-net --allow-read --allow-write --allow-env --unstable --watch server.js
 
 
+
 Von Shirley Lein
+
+Grafiken von Philip Drenckhahn
