@@ -14,6 +14,6 @@ deno run --allow-net --allow-read --allow-write --allow-env --unstable --watch s
 
 
 
-Von Shirley Lein
+App von Shirley Lein
 
 Grafiken von Philip Drenckhahn
