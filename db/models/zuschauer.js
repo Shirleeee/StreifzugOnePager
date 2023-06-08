@@ -1,7 +1,7 @@
 // https://www.freecodecamp.org/news/how-to-use-mysql-in-deno-oak/
 
-import { debug as Debug } from "https://deno.land/x/debug@0.2.0/mod.ts";
-const debug = Debug("app:model");
+// import { debug as Debug } from "https://deno.land/x/debug@0.2.0/mod.ts";
+// const debug = Debug("app:model");
 
 /**
  * Adds a new zuschauer item to zuschauer table
@@ -12,7 +12,7 @@ const debug = Debug("app:model");
  */
 
 export async function addToDB(db, data) {
-  let result = await db.execute(
+  const result = await db.execute(
     `INSERT INTO ZUSCHAUER SET name=?, email=?, lieblingsfilm=?, filme=?`,
     [data.name, data.email, data.lieblingsfilm, data.filme],
   );

@@ -325,7 +325,7 @@
         />
         {% endif %}
       </div>
-      <div class="subgrid__label">
+      <div class="subgrid__label wordBreak">
         <label>Meinungsverschiedenheiten</label>
       </div>
       <div class="subgrid__input">
@@ -416,6 +416,8 @@
     </div>
 
     <div class="lieblingsfilm__input">
+      <label for="lieblingsfilm">Deinen Lieblingsfilm: </label>
+      <br />
       {% if errors.lieblingsfilm %}
 
       <p class="errors">{{ errors.lieblingsfilm }}</p>
@@ -432,9 +434,8 @@
     </div>
 
     <div class="name__input">
-      <div>
-        <label for="name">Deinen Namen: </label>
-      </div>
+      <label for="name">Deinen Namen: </label>
+      <br />
       {% if errors.name %}
       <p class="errors">{{ errors.name }}</p>
       {% endif %}
@@ -450,10 +451,8 @@
     </div>
 
     <div class="email__input">
-      <div>
-        <label for="email">E-mail Deiner Eltern / Begleitpersonen:</label>
-      </div>
-
+      <label for="email">E-mail Deiner Eltern/<br />Begleitpersonen:</label>
+      <br />
       {% if errors.email %}
       <p class="errors">{{ errors.email }}</p>
       {% endif %}
@@ -480,13 +479,10 @@
         name="Datenschutzerklaerung"
         value="akzeptiert"
         required
+        id="datasec"
       />
-    </div>
-    <div class="datenschutz__label">
-      <label class=""
-        ><a href="https://filmkorte.de/rechtliches/datenschutz"
-          >Einwilligung zur Datenschutzerklärung</a
-        ></label
+      <label for="datasec"
+        ><a href="/datenschutz">Einwilligung zur Datenschutzerklärung</a></label
       >
     </div>
 
@@ -506,7 +502,7 @@
   </div>
 
   <div class="filmkorteSocial__icons">
-    <p class="">Folgt uns auf:</p>
+    <p class="folgtuns">Folgt uns auf:</p>
     <a
       target="_blank"
       href="https://www.facebook.com/Filmkorte-eV-100829078801775/"

@@ -6,17 +6,19 @@ export function routes(ctx) {
   ////////////////////////////////////////!
 
   if (ctx.url.pathname == "/" && ctx.request.method == "GET") {
-    debug("/index. GET --->", ctx.token);
+    // debug("/index. GET --->", ctx.token);
     return controller.Lieblingsfilm_add(ctx);
   }
   if (ctx.url.pathname == "/" && ctx.request.method == "POST") {
-    debug("/index. POST --->", ctx.token);
+    // debug("/index. POST --->", ctx.token);
 
     return controller.lieblingsfilm_submit(ctx);
   }
   if (ctx.url.pathname == "/thankyou") {
     return controller.thankyou(ctx);
   }
-
+  if (ctx.url.pathname == "/datenschutz") {
+    return controller.datenschutz(ctx);
+  }
   return ctx;
 }

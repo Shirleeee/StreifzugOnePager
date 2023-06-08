@@ -52,14 +52,14 @@ export async function lieblingsfilm_submit(ctx) {
   csrf.checkToken(ctx, "tokenLiebling", data._csrf, "/error");
   data.filme = formData.getAll("filme").toString();
 
-  zuschauerModel.addToDB(ctx.db.default, data);
+  zuschauerModel.addToDB(data);
 
   ctx.redirect = Response.redirect(ctx.url.origin + "/thankyou", 303);
   return ctx;
 }
 export function thankyou(ctx) {
   let methodCheck = ctx.request.method;
-  debug("@thankyou.  --methodCheck--> %O", methodCheck);
+  // debug("@thankyou.  --methodCheck--> %O", methodCheck);
   sessions.deleteAllSessionsCookiesTokens(ctx);
   ctx.response.body = ctx.nunjucks.render("thankyou.html", {});
   ctx.response.status = 200;
@@ -70,6 +70,14 @@ export function error(ctx) {
   // debug("@error404. ctx.request.url %O", ctx.request.url);
   ctx.response.body = ctx.nunjucks.render("error.html", {});
   ctx.response.status = 404;
+  ctx.response.headers["content-type"] = "text/html";
+  return ctx;
+}
+
+export function datenschutz(ctx) {
+  // debug("@error404. ctx.request.url %O", ctx.request.url);
+  ctx.response.body = ctx.nunjucks.render("datenschutz.html", {});
+  ctx.response.status = 200;
   ctx.response.headers["content-type"] = "text/html";
   return ctx;
 }

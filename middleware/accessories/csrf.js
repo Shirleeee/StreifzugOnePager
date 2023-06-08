@@ -16,7 +16,7 @@ export const generateToken = () => {
 export function checkToken(ctx, tokenName, formToken, navigateTo) {
   const token = ctx.token.get(tokenName);
   // debug("@submitAddReg(ctx).---> data._csrf --->", data._csrf);
-  debug("@submitAddReg(ctx).---> token --->", token);
+  debug("@checkToken.---> token --->", token);
   if (token !== formToken) {
     ctx.response.status = 303;
     ctx.response.headers["location"] = ctx.url.origin + navigateTo;

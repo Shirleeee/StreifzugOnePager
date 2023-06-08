@@ -7,6 +7,44 @@
   font-family: gill_italic;
   src: url(../fonts/gillSans_italic.TTF);
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Datenschutz */
+.da_grid_container > h1 {
+  font-size: 1.4rem;
+}
+.da_grid_container > h2 {
+  font-size: 1rem;
+}
+.da_grid_container > h3 {
+  font-size: 1rem;
+}
+.da_grid_container > p {
+  font-size: 1rem;line-height: 1.2rem;
+}
+article > p {
+  font-size: 1rem;line-height: 1.2rem;
+}
+article {
+  display: block;
+}
+.da_grid_container > ul,
+li {
+  font-size: 1rem;
+  list-style: none;
+  font-family: gill_italic;
+  margin: .1rem;
+}
+.da_grid_container {
+  display: grid;
+  grid-template-columns: auto ;
+  width:fit-content;
+  padding: 0.4rem;
+ 
+}
 /* thank you site */
 .thanyou_grid_container {
   margin-top: 2rem;
@@ -52,10 +90,7 @@
 .error_piratin {
   width: 50%;
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
+
 /* main site  */
 body {
   margin: 0;
@@ -75,6 +110,9 @@ input {
 input {
   letter-spacing: 0.07rem;
 }
+label {
+  font-size: 1.1rem;
+}
 h1 {
   font-family: gill_bold, Verdana, Arial, Helvetica, sans-serif;
   font-size: 2.2rem;
@@ -87,7 +125,7 @@ h2 {
 
 input.larger {
   width: 30px;
-  height: 30px;
+  height: 35px;
 }
 
 .margin {
@@ -178,7 +216,7 @@ a:link {
     "name__input name__input"
     "email__input email__input"
     "datenweiter__text datenweiter__text"
-    "datenschutz__input datenschutz__label"
+    "datenschutz__input datenschutz__input"
     "abschicken__button abschicken__button";
 }
 
@@ -186,48 +224,53 @@ a:link {
   grid-area: datenweiter__text;
   place-self: center;
 }
+
+.datenschutz__input > label {
+  margin-left: 1rem;
+}
+
+.datenschutz__input > input {
+  margin-left: 2rem;
+}
+
 .datenschutz__input {
+  display: flex;
   grid-area: datenschutz__input;
-  margin-right: 1rem;
+  justify-content: center;
   place-self: center;
-  justify-self: end;
 }
-.datenschutz__label {
-  grid-area: datenschutz__label;
-  align-self: center;
-  justify-self: start;
-}
-.datenschutz__input,
-.datenschutz__label {
-  position: relative;
-  right: 3rem;
-}
+
 .text {
   grid-area: text;
 }
 
 .name__input {
-  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
-  width: 90%;
-
   grid-area: name__input;
-  align-self: center;
-  justify-self: start;
-  /* margin-right: 1rem; */
 }
-
+.email__input > input,
+.name__input > input,
+.lieblingsfilm__input > input {
+  width: 100%;
+}
 .email__input {
-  margin: 0.6rem 0.4rem 0.6rem 0.6rem;
-  width: 90%;
   grid-area: email__input;
-  align-self: center;
-  justify-self: start;
-  /* margin-right: 1rem; */
+}
+.email__input,
+.name__input,
+.lieblingsfilm__input,
+.datenschutz__input {
+  margin: 0.6rem 0.6rem 0.6rem 0.6rem;
+
+  place-self: auto;
+  max-width: 100%;
+}
+.lieblingsfilm__input {
+  grid-area: lieblingsfilm__input;
 }
 .input_larger {
   font-size: 1.3rem;
   height: 42px;
-  width: 100%;
+  /* width: 100%; */
   margin: 0.5rem 0 0.5rem 0;
 }
 .subheadline_2 {
@@ -262,21 +305,17 @@ a:link {
 }
 
 .subgrid__label {
-  /* grid-area: subgrid__label; */
   align-self: center;
   margin-left: 0.3rem;
 }
-.subgrid__input {
-  /* grid-area: subgrid__input; */
-  margin-left: 2rem;
-  place-self: center;
-  justify-self: end;
+.wordBreak {
+  word-break: break-all;
 }
-
-.lieblingsfilm__input {
-  grid-area: lieblingsfilm__input;
+.subgrid__input {
+  margin-left: 0.9rem;
   place-self: center;
-  max-width: 90%;
+  align-self: center;
+  justify-self: end;
 }
 
 .abschicken__button {
@@ -300,6 +339,9 @@ a:link {
     "logoArea logoArea"
     "logoArea logoArea"
     "logoArea logoArea";
+}
+.folgtuns {
+  width: auto;
 }
 .filmkorte__link {
   grid-area: filmkorte__link;
@@ -402,8 +444,8 @@ a:link {
       "subheadline_3 subheadline_3 subheadline_3 "
       "lieblingsfilm__input lieblingsfilm__input lieblingsfilm__input"
       "text text text"
-      ". name__input  ."
-      ". email__input ."
+      "name__input name__input name__input"
+      "email__input email__input email__input"
       "datenweiter__text datenweiter__text datenweiter__text"
       "datenschutz__input datenschutz__label datenschutz__label"
       "abschicken__button  abschicken__button  abschicken__button";
@@ -415,9 +457,6 @@ a:link {
   .subheadline_3 {
     font-size: 1vw;
   }
-  .lieblingsfilm__input {
-    grid-area: lieblingsfilm__input;
-  }
 
   .text {
     grid-area: text;
@@ -425,18 +464,6 @@ a:link {
     text-align: center;
   }
 
-  .name__input {
-    grid-column-end: 2;
-  }
-  .datenschutz__input {
-    margin-right: 1rem;
-    place-self: center;
-    justify-self: end;
-  }
-  .datenschutz__label {
-    align-self: center;
-    justify-self: start;
-  }
   .filme {
     grid-area: filme;
     grid-template-columns: 0.25fr 1.25fr 0.25fr 1.25fr;
@@ -502,7 +529,6 @@ a:link {
     align-self: center;
   }
   .filmkorte__link {
-    /* align-self: flex-end; */
     justify-self: end;
     left: 3.3rem;
   }
@@ -522,6 +548,19 @@ a:link {
   h2 {
     font-size: 2rem;
   }
+  .grid_container__form {
+    grid-template-areas:
+      "subheadline_2 subheadline_2 subheadline_2 "
+      "filme filme filme "
+      "subheadline_3 subheadline_3 subheadline_3 "
+      ". lieblingsfilm__input ."
+      "text text text"
+      ". name__input ."
+      ". email__input ."
+      "datenweiter__text datenweiter__text datenweiter__text"
+      ". datenschutz__input ."
+      "abschicken__button  abschicken__button  abschicken__button";
+  }
 }
 @media screen and (min-width: 900px) {
   label {
@@ -530,6 +569,9 @@ a:link {
   .pirat,
   .piratin {
     max-width: 60%;
+  }
+  .datenschutz__input {
+    display: block ruby;
   }
 }
 
@@ -540,10 +582,6 @@ a:link {
   .pirat,
   .piratin {
     max-width: 50%;
-  }
-
-  .email__label {
-    display: ruby;
   }
 }
 
