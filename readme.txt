@@ -6,8 +6,7 @@ DENO/JS
 HTML/CSS
 MySQL
 
-Zur Ansicht kann Gestartet im Debugmodus mit folgenden Eingaben:
-
+Zur starten des Servers mit folgender Eingabe:
 
 
 deno run --allow-net --allow-read --allow-write --allow-env --unstable --watch server.js
