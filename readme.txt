@@ -6,7 +6,7 @@ DENO/JS
 HTML/CSS
 MySQL
 
-Zur starten des Servers mit folgender Eingabe:
+Zum Starten des Servers mit folgender Eingabe:
 
 
 deno run --allow-net --allow-read --allow-write --allow-env --unstable --watch server.js
